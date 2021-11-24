@@ -1,27 +1,31 @@
-import React from 'react';
 import './App.css';
+
+import React from "react";
+
 import Header from './components/Header/Header.jsx';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = () => {
-    return (
-        <BrowserRouter>
-            //Navlink handeling here ie Navbar component with custom css
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Routes>
-                        <Route path='/dialogs' element={<Dialogs />}/>
-                        <Route path='/profile' element={<Profile />}/>
-                    </Routes>
-                </div>
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+export default function App() {
+  return (
+    <Router>
+      <div className='app-wrapper'>
+            <Header/>
+            <Navbar/>
+            <div className='app-wrapper-content'>
+                <Routes>
+                    <Route path='/dialogs' element={<Dialogs />}/>
+                    <Route path='/profile' element={<Profile />}/>
+                </Routes>
             </div>
-        </BrowserRouter>
-    )
+        </div>
+    </Router>
+  );
 }
-
-export default App;
