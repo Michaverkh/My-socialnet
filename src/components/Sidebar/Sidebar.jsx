@@ -1,19 +1,16 @@
 import React from 'react';
 import s from './Sidebar.module.css';
+import Navbar from "./Navbar/Navbar";
+import MyFriends from "./MyFriends/MyFriends";
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
-        <div className={s.friend}>
-            <p>UserName</p>
+        <div className={s.sidebar}>
+            <Navbar />
+            <MyFriends friends ={props.state.myFriends}/>
         </div>
     )
 }
 
 export default Sidebar;
-
-/*
-<div className={s.friend}>
-    <img src="#" alt="photo">
-        <p>UserName</p>
-</div>*/
